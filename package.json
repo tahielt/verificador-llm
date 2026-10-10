@@ -1,0 +1,15 @@
+{
+  "name": "verificador-llm",
+  "version": "0.1.0",
+  "description": "Verificador anti-alucinación para agentes de venta con IA: bloquea precios, links, contactos y promesas que no salen de tus datos. Sin dependencias, listo para n8n.",
+  "type": "module",
+  "license": "MIT",
+  "exports": "./src/verificador.js",
+  "engines": { "node": ">=18" },
+  "keywords": ["llm", "hallucination", "guardrails", "n8n", "whatsapp", "ai-agents", "inmobiliaria"],
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "eval": "node eval/correr.js",
+    "n8n": "node scripts/n8n.js"
+  }
+}

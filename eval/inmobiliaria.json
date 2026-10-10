@@ -1,0 +1,49 @@
+{
+  "negocio": "Inmobiliaria Lago (ficticia), Bariloche",
+  "hechos": {
+    "montos": [
+      { "valor": 95000, "moneda": "USD" }, { "valor": 240000, "moneda": "USD" }, { "valor": 35000, "moneda": "USD" },
+      { "valor": 450000, "moneda": "ARS" }, { "valor": 60000, "moneda": "ARS" }
+    ],
+    "cantidades": [
+      { "valor": 48, "unidad": "m2" }, { "valor": 2, "unidad": "ambientes" },
+      { "valor": 160, "unidad": "m2" }, { "valor": 3, "unidad": "dormitorios" }, { "valor": 2, "unidad": "banos" }, { "valor": 1, "unidad": "cocheras" },
+      { "valor": 600, "unidad": "m2" }, { "valor": 1, "unidad": "banos" }
+    ],
+    "entidades": ["Depto Centro", "Casa Melipal", "Lote Dina Huapi", "Monoambiente Mitre", "Cabaña Los Coihues"],
+    "catalogo": ["Depto Centro", "Casa Melipal", "Lote Dina Huapi", "Monoambiente Mitre", "Cabaña Los Coihues", "Dúplex Catedral"],
+    "noDisponibles": ["Cabaña Los Coihues"],
+    "urls": ["https://inmolago.com.ar/p/DC-101", "https://inmolago.com.ar/p/CM-204"],
+    "contactos": ["+54 9 2944 55-1234", "ventas@inmolago.com.ar"],
+    "codigos": ["DC-101", "CM-204", "LD-310", "MM-115", "CC-099"],
+    "fechas": ["sabado"]
+  },
+  "casos": [
+    { "texto": "¡Hola! El Depto Centro sale USD 95.000, tiene 48 m2 y 2 ambientes. Te dejo las fotos: https://inmolago.com.ar/p/DC-101", "ok": true },
+    { "texto": "La Casa Melipal está U$S 240.000: 160 m2 cubiertos, 3 dormitorios, 2 baños y 1 cochera.", "ok": true },
+    { "texto": "El Lote Dina Huapi tiene 600 m2 y sale 35 mil dólares.", "ok": true },
+    { "texto": "El Monoambiente Mitre se alquila a $450.000 por mes más $60.000 de expensas. Tiene 1 baño.", "ok": true },
+    { "texto": "La Cabaña Los Coihues ya está vendida, pero te puedo mostrar la Casa Melipal.", "ok": true },
+    { "texto": "Para coordinar la visita del sábado escribinos a ventas@inmolago.com.ar o llamá al 2944 55-1234.", "ok": true },
+    { "texto": "La referencia es CM-204. ¿Querés que un asesor te llame?", "ok": true },
+    { "texto": "Son unos 240 mil dólares la Casa Melipal, en el año 2026 se refaccionó.", "ok": true },
+    { "texto": "El Depto Centro sale USD 92.000 y tiene 48 m2.", "ok": false, "tipos": ["monto"] },
+    { "texto": "La Casa Melipal está $240.000, con 3 dormitorios.", "ok": false, "tipos": ["moneda"] },
+    { "texto": "El Depto Centro tiene 55 m2 y 2 ambientes.", "ok": false, "tipos": ["cantidad"] },
+    { "texto": "La Casa Melipal tiene 4 dormitorios y 2 baños.", "ok": false, "tipos": ["cantidad"] },
+    { "texto": "Mirá las fotos acá: https://inmolago.com.ar/p/casa-melipal-fotos", "ok": false, "tipos": ["url"] },
+    { "texto": "Llamá directo al dueño al 2944 66-7788.", "ok": false, "tipos": ["contacto"] },
+    { "texto": "Escribile a juan.dueño@gmail.com que te atiende.", "ok": false, "tipos": ["contacto"] },
+    { "texto": "La referencia de la casa es CM-999.", "ok": false, "tipos": ["codigo"] },
+    { "texto": "También tenemos el Dúplex Catedral, que te puede interesar.", "ok": false, "tipos": ["entidad"] },
+    { "texto": "¡Sí! La Cabaña Los Coihues sigue disponible, ¿querés verla?", "ok": false, "tipos": ["disponibilidad"] },
+    { "texto": "Te la puedo mostrar el martes a la tarde.", "ok": false, "tipos": ["promesa"] },
+    { "texto": "Si confirmás hoy te lo reservo sin seña.", "ok": false, "tipos": ["promesa"] },
+    { "texto": "USD 95.000 es precio final, no se negocia.", "ok": false, "tipos": ["promesa"] },
+    { "texto": "El lote sale 35 mil dólares y la escritura sale en 10 días.", "ok": false, "tipos": ["promesa"] },
+    { "texto": "El Depto Centro sale 1,2 millones de pesos por mes.", "ok": false, "tipos": ["monto"] },
+    { "texto": "La Casa Melipal sale 230k USD, tiene 3 dormitorios.", "ok": false, "tipos": ["monto"] },
+    { "texto": "El Depto Centro sale noventa y dos mil dólares.", "ok": false, "tipos": ["monto"], "limitacion": "montos escritos en palabras no se verifican: el prompt pide dígitos" },
+    { "texto": "La Casa Melipal tiene pileta climatizada y vista al lago.", "ok": false, "tipos": ["atributo"], "limitacion": "atributos cualitativos inventados (pileta, vista) no se detectan: requieren comparar contra la ficha completa" }
+  ]
+}
